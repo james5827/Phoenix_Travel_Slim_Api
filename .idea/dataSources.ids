@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - phoenix_travel@localhost" uuid="3b280b8b-a784-47da-9adb-d65baf3594b3">
+    <database-info product="MySQL" version="5.6.35" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.45 ( Revision: 9131eefa398531c7dc98776e8a3fe839e544c5b2 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="phoenix_travel"/>
+      <table id="2" parent="1" name="customer_bookings"/>
+      <table id="3" parent="1" name="customer_reviews"/>
+      <table id="4" parent="1" name="customers"/>
+      <table id="5" parent="1" name="itineraries"/>
+      <table id="6" parent="1" name="migrations"/>
+      <table id="7" parent="1" name="password_resets"/>
+      <table id="8" parent="1" name="tours"/>
+      <table id="9" parent="1" name="trip_bookings"/>
+      <table id="10" parent="1" name="trips"/>
+      <table id="11" parent="1" name="users"/>
+      <table id="12" parent="1" name="vehicles"/>
+      <column id="13" parent="2" name="Trip_Booking_No">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="14" parent="2" name="Customer_Id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="15" parent="2" name="Accepted_Invite">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <index id="16" parent="2" name="customer_bookings_customer_id_foreign">
+        <columns>Customer_Id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="17" parent="2" name="PRIMARY">
+        <columns>Trip_Booking_No
+Customer_Id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="18" parent="2" name="CB_Trip_Booking_fk">
+        <columns>Trip_Booking_No</columns>
+        <ref-key>~.trip_bookings.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="19" parent="2" name="customer_bookings_customer_id_foreign">
+        <columns>Customer_Id</columns>
+        <ref-key>~.customers.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="20" parent="3" name="Trip_Id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="21" parent="3" name="Customer_Id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="22" parent="3" name="Rating">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(4)</data-type>
+      </column>
+      <column id="23" parent="3" name="General_Feedback">
+        <mandatory>1</mandatory>
+        <data-type>varchar(256)</data-type>
+      </column>
+      <column id="24" parent="3" name="Likes">
+        <mandatory>1</mandatory>
+        <data-type>varchar(256)</data-type>
+      </column>
+      <column id="25" parent="3" name="Dislikes">
+        <mandatory>1</mandatory>
+        <data-type>varchar(256)</data-type>
+      </column>
+      <index id="26" parent="3" name="CR_Customer_fk">
+        <columns>Customer_Id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="27" parent="3" name="PRIMARY">
+        <columns>Trip_Id
+Customer_Id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="28" parent="3" name="CR_Customer_fk">
+        <columns>Customer_Id</columns>
+        <ref-key>~.customers.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="29" parent="3" name="CR_Trip_fk">
+        <columns>Trip_Id</columns>
+        <ref-key>~.trips.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="30" parent="4" name="Customer_Id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="31" parent="4" name="First_Name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(35)</data-type>
+      </column>
+      <column id="32" parent="4" name="Middle_Initial">
+        <data-type>char(1)</data-type>
+      </column>
+      <column id="33" parent="4" name="Last_Name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(35)</data-type>
+      </column>
+      <column id="34" parent="4" name="Street_No">
+        <mandatory>1</mandatory>
+        <data-type>smallint(6)</data-type>
+      </column>
+      <column id="35" parent="4" name="Street_Name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="36" parent="4" name="Suburb">
+        <mandatory>1</mandatory>
+        <data-type>varchar(35)</data-type>
+      </column>
+      <column id="37" parent="4" name="Postcode">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="38" parent="4" name="Email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(150)</data-type>
+      </column>
+      <column id="39" parent="4" name="Password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(500)</data-type>
+      </column>
+      <column id="40" parent="4" name="Phone">
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="41" parent="4" name="AuthCustomer">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <index id="42" parent="4" name="customers_email_unique">
+        <columns>Email</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="43" parent="4" name="customers_email_unique">
+        <columns>Email</columns>
+        <underlying-index>customers_email_unique</underlying-index>
+      </key>
+      <key id="44" parent="4" name="PRIMARY">
+        <columns>Customer_Id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="45" parent="5" name="Tour_No">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="46" parent="5" name="Day_No">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(4)</data-type>
+      </column>
+      <column id="47" parent="5" name="Hotel_Booking_No">
+        <mandatory>1</mandatory>
+        <data-type>char(6)</data-type>
+      </column>
+      <column id="48" parent="5" name="Activities">
+        <data-type>varchar(150)</data-type>
+      </column>
+      <column id="49" parent="5" name="Meals">
+        <data-type>varchar(150)</data-type>
+      </column>
+      <key id="50" parent="5" name="PRIMARY">
+        <columns>Tour_No
+Day_No</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="51" parent="5" name="I_Tour_fk">
+        <columns>Tour_No</columns>
+        <ref-key>~.tours.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="52" parent="6" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="53" parent="6" name="migration">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="54" parent="6" name="batch">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="55" parent="6" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="56" parent="7" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(191)</data-type>
+      </column>
+      <column id="57" parent="7" name="token">
+        <mandatory>1</mandatory>
+        <data-type>varchar(191)</data-type>
+      </column>
+      <column id="58" parent="7" name="created_at">
+        <data-type>timestamp</data-type>
+      </column>
+      <index id="59" parent="7" name="password_resets_email_index">
+        <columns>email</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <column id="60" parent="8" name="Tour_no">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="61" parent="8" name="Tour_Name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(70)</data-type>
+      </column>
+      <column id="62" parent="8" name="Description">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="63" parent="8" name="Duration">
+        <data-type>double(8,2)</data-type>
+      </column>
+      <column id="64" parent="8" name="Route_Map">
+        <data-type>varchar(256)</data-type>
+      </column>
+      <key id="65" parent="8" name="PRIMARY">
+        <columns>Tour_no</columns>
+        <primary>1</primary>
+      </key>
+      <column id="66" parent="9" name="Trip_Booking_No">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="67" parent="9" name="Trip_Id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="68" parent="9" name="Primary_Customer">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="69" parent="9" name="Booking_Date">
+        <data-type>date</data-type>
+      </column>
+      <column id="70" parent="9" name="Deposit_Amount">
+        <data-type>decimal(6,2)</data-type>
+      </column>
+      <index id="71" parent="9" name="TB_Customer_fk">
+        <columns>Primary_Customer</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="72" parent="9" name="TB_Trip_fk">
+        <columns>Trip_Id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="73" parent="9" name="PRIMARY">
+        <columns>Trip_Booking_No</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="74" parent="9" name="TB_Customer_fk">
+        <columns>Primary_Customer</columns>
+        <ref-key>~.customers.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="75" parent="9" name="TB_Trip_fk">
+        <columns>Trip_Id</columns>
+        <ref-key>~.trips.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="76" parent="10" name="Trip_Id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="77" parent="10" name="Tour_No">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="78" parent="10" name="Rego_No">
+        <mandatory>1</mandatory>
+        <data-type>char(6)</data-type>
+      </column>
+      <column id="79" parent="10" name="Departure_Date">
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <column id="80" parent="10" name="Max_Passengers">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="81" parent="10" name="Standard_Amount">
+        <mandatory>1</mandatory>
+        <data-type>decimal(6,2)</data-type>
+      </column>
+      <index id="82" parent="10" name="T_Tour_fk">
+        <columns>Tour_No</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="83" parent="10" name="T_Vehicle_fk">
+        <columns>Rego_No</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="84" parent="10" name="PRIMARY">
+        <columns>Trip_Id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="85" parent="10" name="T_Tour_fk">
+        <columns>Tour_No</columns>
+        <ref-key>~.tours.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="86" parent="10" name="T_Vehicle_fk">
+        <columns>Rego_No</columns>
+        <ref-key>~.vehicles.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="87" parent="11" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="88" parent="11" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(191)</data-type>
+      </column>
+      <column id="89" parent="11" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(191)</data-type>
+      </column>
+      <column id="90" parent="11" name="password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(191)</data-type>
+      </column>
+      <column id="91" parent="11" name="Authorisation_Level">
+        <mandatory>1</mandatory>
+        <data-type>varchar(191)</data-type>
+      </column>
+      <column id="92" parent="11" name="remember_token">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="93" parent="11" name="created_at">
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="94" parent="11" name="updated_at">
+        <data-type>timestamp</data-type>
+      </column>
+      <index id="95" parent="11" name="users_email_unique">
+        <columns>email</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="96" parent="11" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="97" parent="11" name="users_email_unique">
+        <columns>email</columns>
+        <underlying-index>users_email_unique</underlying-index>
+      </key>
+      <column id="98" parent="12" name="Rego_No">
+        <mandatory>1</mandatory>
+        <data-type>char(6)</data-type>
+      </column>
+      <column id="99" parent="12" name="VIN">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="100" parent="12" name="Make">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="101" parent="12" name="Model">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="102" parent="12" name="Year">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="103" parent="12" name="Capacity">
+        <mandatory>1</mandatory>
+        <data-type>smallint(6)</data-type>
+      </column>
+      <column id="104" parent="12" name="Fuel_Type">
+        <data-type>varchar(8)</data-type>
+      </column>
+      <column id="105" parent="12" name="Equipment">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="106" parent="12" name="License_Required">
+        <mandatory>1</mandatory>
+        <data-type>char(2)</data-type>
+      </column>
+      <key id="107" parent="12" name="PRIMARY">
+        <columns>Rego_No</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>

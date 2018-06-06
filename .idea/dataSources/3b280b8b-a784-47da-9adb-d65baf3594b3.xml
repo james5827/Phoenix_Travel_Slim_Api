@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - phoenix_travel@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.7">
+    <root id="1"/>
+    <schema id="2" parent="1" name="phoenix_travel">
+      <Visible>1</Visible>
+    </schema>
+    <table id="3" parent="2" name="customer_bookings"/>
+    <table id="4" parent="2" name="customer_reviews"/>
+    <table id="5" parent="2" name="customers"/>
+    <table id="6" parent="2" name="itineraries"/>
+    <table id="7" parent="2" name="migrations"/>
+    <table id="8" parent="2" name="password_resets"/>
+    <table id="9" parent="2" name="tours"/>
+    <table id="10" parent="2" name="trip_bookings"/>
+    <table id="11" parent="2" name="trips"/>
+    <table id="12" parent="2" name="users"/>
+    <table id="13" parent="2" name="vehicles"/>
+    <column id="14" parent="3" name="Trip_Booking_No">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="15" parent="3" name="Customer_Id">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="3" name="Accepted_Invite">
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="17" parent="3" name="customer_bookings_customer_id_foreign">
+      <ColNames>Customer_Id</ColNames>
+    </index>
+    <key id="18" parent="3" name="PRIMARY">
+      <ColNames>Trip_Booking_No
+Customer_Id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="19" parent="3" name="CB_Trip_Booking_fk">
+      <ColNames>Trip_Booking_No</ColNames>
+      <RefTableName>trip_bookings</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>Trip_Booking_No</RefColNames>
+      <OnUpdate>restrict</OnUpdate>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="20" parent="3" name="customer_bookings_customer_id_foreign">
+      <ColNames>Customer_Id</ColNames>
+      <RefTableName>customers</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>Customer_Id</RefColNames>
+      <OnUpdate>restrict</OnUpdate>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="21" parent="4" name="Trip_Id">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="4" name="Customer_Id">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="4" name="Rating">
+      <DataType>tinyint(4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="4" name="General_Feedback">
+      <DataType>varchar(256)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="4" name="Likes">
+      <DataType>varchar(256)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="4" name="Dislikes">
+      <DataType>varchar(256)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="27" parent="4" name="CR_Customer_fk">
+      <ColNames>Customer_Id</ColNames>
+    </index>
+    <key id="28" parent="4" name="PRIMARY">
+      <ColNames>Trip_Id
+Customer_Id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="29" parent="4" name="CR_Customer_fk">
+      <ColNames>Customer_Id</ColNames>
+      <RefTableName>customers</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>Customer_Id</RefColNames>
+      <OnUpdate>restrict</OnUpdate>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="30" parent="4" name="CR_Trip_fk">
+      <ColNames>Trip_Id</ColNames>
+      <RefTableName>trips</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>Trip_Id</RefColNames>
+      <OnUpdate>restrict</OnUpdate>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="31" parent="5" name="Customer_Id">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="5" name="First_Name">
+      <DataType>varchar(35)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="5" name="Middle_Initial">
+      <DataType>char(1)|0</DataType>
+    </column>
+    <column id="34" parent="5" name="Last_Name">
+      <DataType>varchar(35)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="5" name="Street_No">
+      <DataType>smallint(6)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="5" name="Street_Name">
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="5" name="Suburb">
+      <DataType>varchar(35)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="5" name="Postcode">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="5" name="Email">
+      <DataType>varchar(150)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="5" name="Password">
+      <DataType>varchar(500)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="5" name="Phone">
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="42" parent="5" name="AuthCustomer">
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="43" parent="5" name="customers_email_unique">
+      <ColNames>Email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="44" parent="5" name="customers_email_unique">
+      <ColNames>Email</ColNames>
+      <UnderlyingIndexName>customers_email_unique</UnderlyingIndexName>
+    </key>
+    <key id="45" parent="5" name="PRIMARY">
+      <ColNames>Customer_Id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="46" parent="6" name="Tour_No">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="6" name="Day_No">
+      <DataType>tinyint(4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="6" name="Hotel_Booking_No">
+      <DataType>char(6)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="6" name="Activities">
+      <DataType>varchar(150)|0</DataType>
+    </column>
+    <column id="50" parent="6" name="Meals">
+      <DataType>varchar(150)|0</DataType>
+    </column>
+    <key id="51" parent="6" name="PRIMARY">
+      <ColNames>Tour_No
+Day_No</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="52" parent="6" name="I_Tour_fk">
+      <ColNames>Tour_No</ColNames>
+      <RefTableName>tours</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>Tour_no</RefColNames>
+      <OnUpdate>restrict</OnUpdate>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="53" parent="7" name="id">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="54" parent="7" name="migration">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="7" name="batch">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="56" parent="7" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="57" parent="8" name="email">
+      <DataType>varchar(191)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="58" parent="8" name="token">
+      <DataType>varchar(191)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="8" name="created_at">
+      <DataType>timestamp|0</DataType>
+    </column>
+    <index id="60" parent="8" name="password_resets_email_index">
+      <ColNames>email</ColNames>
+    </index>
+    <column id="61" parent="9" name="Tour_no">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="9" name="Tour_Name">
+      <DataType>varchar(70)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="9" name="Description">
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="9" name="Duration">
+      <DataType>double(8,2)|0</DataType>
+    </column>
+    <column id="65" parent="9" name="Route_Map">
+      <DataType>varchar(256)|0</DataType>
+    </column>
+    <key id="66" parent="9" name="PRIMARY">
+      <ColNames>Tour_no</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="67" parent="10" name="Trip_Booking_No">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="10" name="Trip_Id">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="10" name="Primary_Customer">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="70" parent="10" name="Booking_Date">
+      <DataType>date|0</DataType>
+    </column>
+    <column id="71" parent="10" name="Deposit_Amount">
+      <DataType>decimal(6,2)|0</DataType>
+    </column>
+    <index id="72" parent="10" name="TB_Customer_fk">
+      <ColNames>Primary_Customer</ColNames>
+    </index>
+    <index id="73" parent="10" name="TB_Trip_fk">
+      <ColNames>Trip_Id</ColNames>
+    </index>
+    <key id="74" parent="10" name="PRIMARY">
+      <ColNames>Trip_Booking_No</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="75" parent="10" name="TB_Customer_fk">
+      <ColNames>Primary_Customer</ColNames>
+      <RefTableName>customers</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>Customer_Id</RefColNames>
+      <OnUpdate>restrict</OnUpdate>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="76" parent="10" name="TB_Trip_fk">
+      <ColNames>Trip_Id</ColNames>
+      <RefTableName>trips</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>Trip_Id</RefColNames>
+      <OnUpdate>restrict</OnUpdate>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="77" parent="11" name="Trip_Id">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="78" parent="11" name="Tour_No">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="79" parent="11" name="Rego_No">
+      <DataType>char(6)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="80" parent="11" name="Departure_Date">
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="81" parent="11" name="Max_Passengers">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="82" parent="11" name="Standard_Amount">
+      <DataType>decimal(6,2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="83" parent="11" name="T_Tour_fk">
+      <ColNames>Tour_No</ColNames>
+    </index>
+    <index id="84" parent="11" name="T_Vehicle_fk">
+      <ColNames>Rego_No</ColNames>
+    </index>
+    <key id="85" parent="11" name="PRIMARY">
+      <ColNames>Trip_Id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="86" parent="11" name="T_Tour_fk">
+      <ColNames>Tour_No</ColNames>
+      <RefTableName>tours</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>Tour_no</RefColNames>
+      <OnUpdate>restrict</OnUpdate>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="87" parent="11" name="T_Vehicle_fk">
+      <ColNames>Rego_No</ColNames>
+      <RefTableName>vehicles</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>Rego_No</RefColNames>
+      <OnUpdate>restrict</OnUpdate>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="88" parent="12" name="id">
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="89" parent="12" name="name">
+      <DataType>varchar(191)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="90" parent="12" name="email">
+      <DataType>varchar(191)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="91" parent="12" name="password">
+      <DataType>varchar(191)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="92" parent="12" name="Authorisation_Level">
+      <DataType>varchar(191)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="93" parent="12" name="remember_token">
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="94" parent="12" name="created_at">
+      <DataType>timestamp|0</DataType>
+    </column>
+    <column id="95" parent="12" name="updated_at">
+      <DataType>timestamp|0</DataType>
+    </column>
+    <index id="96" parent="12" name="users_email_unique">
+      <ColNames>email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="97" parent="12" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="98" parent="12" name="users_email_unique">
+      <ColNames>email</ColNames>
+      <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
+    </key>
+    <column id="99" parent="13" name="Rego_No">
+      <DataType>char(6)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="100" parent="13" name="VIN">
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="101" parent="13" name="Make">
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="102" parent="13" name="Model">
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="103" parent="13" name="Year">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="104" parent="13" name="Capacity">
+      <DataType>smallint(6)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="105" parent="13" name="Fuel_Type">
+      <DataType>varchar(8)|0</DataType>
+    </column>
+    <column id="106" parent="13" name="Equipment">
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="107" parent="13" name="License_Required">
+      <DataType>char(2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="108" parent="13" name="PRIMARY">
+      <ColNames>Rego_No</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
