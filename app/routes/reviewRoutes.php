@@ -8,10 +8,10 @@ use \Psr\Http\Message\ResponseInterface as Response;
  */
 $app->get('/tour_reviews/{tour_no}', function(Request $request, Response $response, array $args){
     try{
-        $sql = 'SELECT trips.Tour_No, trips.Trip_Id, trips.Departure_Date ,c.Customer_Id, c.Rating, c.General_Feedback, c.Likes, c.Dislikes
+        $sql = 'SELECT trips.tour_no, trips.trip_id, trips.departure_date ,c.customer_id, c.rating, c.general_feedback, c.likes, c.dislikes
                 FROM customer_reviews as c
-                INNER JOIN trips ON trips.Trip_Id = c.Trip_Id
-                WHERE trips.Tour_No = :tour_no;';
+                INNER JOIN trips ON trips.trip_id = c.trip_id
+                WHERE trips.tour_no = :tour_no;';
 
         $dbh = getConnection();
         $stmt = $dbh->prepare($sql);
@@ -21,6 +21,7 @@ $app->get('/tour_reviews/{tour_no}', function(Request $request, Response $respon
         $row = $stmt->fetchAll(PDO::FETCH_OBJ);
 
         $dbh = null;
+        $stmt = null;
 
         $response->getBody()->write(json_encode($row));
     }catch (PDOException $e){
@@ -34,12 +35,12 @@ $app->get('/tour_reviews/{tour_no}', function(Request $request, Response $respon
  */
 $app->get('/customer_reviews/{customer_id}', function(Request $request, Response $response, array $args){
     try{
-        $sql = "SELECT cr.Trip_Id, cr.Customer_Id, cr.Dislikes, cr.General_Feedback, cr.Likes, cr.Rating, t.Tour_no, t.Tour_Name
+        $sql = "SELECT cr.trip_id, cr.customer_id, cr.dislikes, cr.general_feedback, cr.likes, cr.rating, t.tour_no, t.tour_name
                 FROM customer_reviews as cr, trips as tr, tours as t
-                WHERE cr.Trip_Id = tr.Trip_Id
-                AND tr.Tour_No = t.Tour_no
-                AND cr.Customer_Id = :customer_id
-                ORDER BY tr.Tour_No DESC";
+                WHERE cr.trip_id = tr.trip_id
+                AND tr.tour_no = t.tour_no
+                AND cr.customer_id = :customer_id
+                ORDER BY tr.tour_no DESC";
 
         $dbh = getConnection();
         $stmt = $dbh->prepare($sql);
@@ -49,6 +50,7 @@ $app->get('/customer_reviews/{customer_id}', function(Request $request, Response
         $row = $stmt->fetchAll(PDO::FETCH_OBJ);
 
         $dbh = null;
+        $stmt = null;
 
         $response->getBody()->write(json_encode($row));
     }catch (PDOException $e){
@@ -98,7 +100,7 @@ $app->post('/insert_review', function(Request $request, Response $response, arra
  */
 $app->delete('/delete_review/{trip_id}/{customer_id}', function(Request $request, Response $response, array $args){
     try{
-        $sql = "DELETE FROM customer_reviews WHERE Customer_Id = :customer_id AND Trip_Id = :trip_id";
+        $sql = "DELETE FROM customer_reviews WHERE customer_id = :customer_id AND trip_id = :trip_id";
         $dbh = getConnection();
 
         $stmt = $dbh->prepare($sql);
@@ -106,7 +108,8 @@ $app->delete('/delete_review/{trip_id}/{customer_id}', function(Request $request
         $stmt->bindParam('customer_id', $args['customer_id']);
         $stmt->execute();
 
-        $dbh=null;
+        $dbh = null;
+        $stmt = null;
     }catch(PDOException $e){
         echo $e->getMessage();
     }

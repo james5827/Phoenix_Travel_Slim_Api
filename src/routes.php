@@ -5,11 +5,14 @@ use Slim\Http\Response;
 
 // Routes
 
+/**
+ * Test Route For Heroku TODO Remove Later
+ */
 $app->get('/', function (Request $request, Response $response) {
     $response->getBody()->write(print_r(parse_url(getenv('DATABASE_URL'))));
 
     try{
-        $sql = "SELECT Tour_Name FROM tours;";
+        $sql = "SELECT * FROM tours;";
 
         $dbh = getConnection();
         $stmt = $dbh->prepare($sql);
@@ -17,6 +20,9 @@ $app->get('/', function (Request $request, Response $response) {
         $row = $stmt->fetchAll(PDO::FETCH_OBJ);
 
         $response->write(json_encode($row));
+
+        $dbh = null;
+        $stmt = null;
 
     }catch (PDOException $exception){
         $response->write($exception->getMessage());
@@ -53,7 +59,7 @@ $app->add(function(Request $request, Response $response, $next){
 
 $authMiddleware = function (Request $request, Response $response, $next){
     try{
-        $sql = "SELECT Password FROM customers WHERE Password = :authKey";
+        $sql = "SELECT password FROM customers WHERE password = :authKey";
 
         $dbh = getConnection();
         $stmt = $dbh->prepare($sql);

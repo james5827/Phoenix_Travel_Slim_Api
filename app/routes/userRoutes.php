@@ -11,7 +11,7 @@ $app->get('/user/{customer_id}', function(Request $request, Response $response, 
     try{
         $sql = "SELECT *
                 FROM customers
-                WHERE Customer_Id = :customer_id";
+                WHERE customer_id = :customer_id";
 
         $dbh = getConnection();
         $stmt = $dbh->prepare($sql);
@@ -39,9 +39,9 @@ $app->get('/user/{customer_id}', function(Request $request, Response $response, 
 $app->get('/additional_passenger_email/{email}', function(Request $request, Response $response, array $args){
 
     try{
-        $sql = "SELECT Email
+        $sql = "SELECT email
                 FROM customers
-                WHERE Email LIKE CONCAT('%',:email, '%');";
+                WHERE email LIKE CONCAT('%',:email, '%');";
 
         $dbh = getConnection();
         $stmt = $dbh->prepare($sql);
@@ -80,10 +80,10 @@ $app->put('/update_account', function(Request $request, Response $response, arra
 
     try{
         $sql = "UPDATE customers
-                SET First_Name = :first_name, Middle_Initial = :middle_initial , Last_Name = :last_name,
-                Street_No = :street_no, Street_Name = :street_name, Suburb = :suburb, Postcode = :postcode,
-                 Email = :email, Phone = :phone
-                 WHERE Customer_Id = :customer_id";
+                SET first_name = :first_name, middle_initial = :middle_initial , last_name = :last_name,
+                street_no = :street_no, street_name = :street_name, suburb = :suburb, postcode = :postcode,
+                 email = :email, phone = :phone
+                 WHERE customer_id = :customer_id";
 
         $dbh = getConnection();
 
@@ -122,7 +122,7 @@ $app->put('/reset_password', function(Request $request, Response $response, arra
     $email = $parsedBody['email'];
 
     try{
-        $sql = "UPDATE customers SET Password = :user_password WHERE Customer_Id = :customer_id;";
+        $sql = "UPDATE customers SET password = :user_password WHERE customer_id = :customer_id;";
         $dbh = getConnection();
 
         $stmt = $dbh->prepare($sql);

@@ -8,21 +8,21 @@ use \Psr\Http\Message\ResponseInterface as Response;
  */
 $app->get('/customer_bookings/{customer_id}', function(Request $request, Response $response, array $args){
     try{
-        $sql = 'SELECT tb.`Trip_Booking_No`, tb.`Trip_Id`, tb.`Primary_Customer`, tb.`Booking_Date`, tb.`Deposit_Amount`, tr.`Departure_Date`, t.Duration, t.Tour_Name, true as Owner
+        $sql = 'SELECT tb.`trip_booking_no`, tb.`trip_id`, tb.`primary_customer`, tb.`booking_date`, tb.`deposit_amount`, tr.`departure_date`, t.duration, t.tour_name, true as owner
                 FROM `trip_bookings` as tb , `trips` as tr, `tours` as t
-                WHERE tb.Trip_Id = tr.Trip_Id
-                AND tr.Tour_No = t.Tour_no
-                AND Primary_Customer = :customer_id
+                WHERE tb.trip_Id = tr.trip_Id
+                AND tr.tour_No = t.tour_no
+                AND primary_customer = :customer_id
 
                 UNION ALL
 
-                SELECT tb.`Trip_Booking_No`, tb.`Trip_Id`, tb.`Primary_Customer`,tb.`Booking_Date`,tb.`Deposit_Amount`,tr.`Departure_Date`, tu.Duration, tu.Tour_Name, false as Owner
+                SELECT tb.`trip_booking_no`, tb.`trip_id`, tb.`primary_customer`,tb.`booking_date`,tb.`deposit_amount`,tr.`departure_date`, tu.duration, tu.tour_name, false as owner
                 FROM `customer_bookings` as cb, `trip_bookings` as tb, `trips` as tr, `tours` as tu
-                WHERE cb.Customer_Id = :customer_id
-                AND cb.Trip_Booking_No = tb.Trip_Booking_No
-                AND tb.Trip_Id = tr.Trip_Id
-                AND tr.Tour_No = tu.Tour_no
-                AND cb.Accepted_Invite = true';
+                WHERE cb.customer_id = :customer_id
+                AND cb.trip_booking_no = tb.trip_booking_no
+                AND tb.trip_id = tr.trip_id
+                AND tr.tour_no = tu.tour_no
+                AND cb.accepted_invite = true';
 
 
         //TODO :look at this later booking need to list bookings where you are invited
@@ -50,10 +50,10 @@ $app->get('/customer_bookings/{customer_id}', function(Request $request, Respons
  */
 $app->get('/additional_customers_bookings/{trip_booking_no}', function(Request $request, Response $response, array $args){
     try{
-        $sql = 'SELECT c.First_Name, c.Middle_Initial, c.Last_Name, cb.Accepted_Invite
+        $sql = 'SELECT c.first_name, c.middle_initial, c.last_name, cb.accepted_invite
             FROM `customer_bookings` as cb, `customers` as c
-            WHERE cb.Trip_Booking_No = :trip_booking_no
-            AND cb.Customer_Id = c.Customer_Id';
+            WHERE cb.trip_booking_no = :trip_booking_no
+            AND cb.customer_id = c.customer_id';
 
         $dbh = getConnection();
 
@@ -64,6 +64,7 @@ $app->get('/additional_customers_bookings/{trip_booking_no}', function(Request $
         $row = $stmt->fetchAll(PDO::FETCH_OBJ);
 
         $dbh = null;
+        $stmt = null;
 
         $response->getBody()->write(json_encode($row));
     }catch (PDOException $e){
@@ -78,14 +79,14 @@ $app->get('/additional_customers_bookings/{trip_booking_no}', function(Request $
  */
 $app->get('/customer_invites/{customer_id}', function(Request $request, Response $response, array $args){
     try{
-        $sql = 'SELECT cb.Trip_Booking_No, tr.Departure_Date, c.First_Name, c.Middle_Initial, c.Last_Name, tu.Tour_Name
+        $sql = 'SELECT cb.trip_booking_no, tr.departure_date, c.first_name, c.middle_initial, c.last_name, tu.tour_name
                 FROM `customer_bookings` as cb, `trip_bookings` as tb, `trips` as tr, `tours` as tu, customers as c
-                WHERE cb.Customer_Id = :customer_id
-                AND cb.Trip_Booking_No = tb.Trip_Booking_No
-                AND tb.Trip_Id = tr.Trip_Id
-                AND tr.Tour_No = tu.Tour_no
-                AND tb.Primary_Customer = c.Customer_Id
-                AND cb.Accepted_Invite = FALSE ';
+                WHERE cb.customer_id = :customer_id
+                AND cb.trip_booking_no = tb.trip_booking_no
+                AND tb.trip_id = tr.trip_id
+                AND tr.tour_no = tu.tour_no
+                AND tb.primary_customer = c.customer_id
+                AND cb.accepted_invite = FALSE ';
 
         $dbh = getConnection();
 
@@ -156,10 +157,10 @@ $app->post('/invite_passenger', function(Request $request, Response $response, a
     $emailString = trim($emailString, ',');
 
     try{
-        $sql = 'INSERT INTO customer_bookings (Trip_Booking_No, Customer_Id, Accepted_Invite)
-                SELECT ?, Customer_Id, 0
+        $sql = 'INSERT INTO customer_bookings (trip_booking_no, customer_id, accepted_invite)
+                SELECT ?, customer_id, 0
                 FROM customers
-                WHERE Email IN ('. $emailString .');';
+                WHERE email IN ('. $emailString .');';
 
         $dbh = getConnection();
 
@@ -181,7 +182,7 @@ $app->post('/invite_passenger', function(Request $request, Response $response, a
  */
 $app->delete("/delete_booking/{trip_booking_no}", function(Request $request, Response $response, array $args){
     try{
-        $sql = "DELETE FROM trip_bookings WHERE Trip_Booking_No = :trip_booking_no";
+        $sql = "DELETE FROM trip_bookings WHERE trip_booking_no = :trip_booking_no";
 
         $dbh = getConnection();
 
@@ -205,7 +206,7 @@ $app->delete("/delete_booking/{trip_booking_no}", function(Request $request, Res
  */
 $app->delete("/refuse_invite/{trip_booking_no}/{customer_id}", function(Request $request, Response $response, array $args){
     try{
-        $sql = "DELETE FROM customer_bookings WHERE Trip_Booking_No = :trip_booking_no AND Customer_Id = :customer_id";
+        $sql = "DELETE FROM customer_bookings WHERE trip_booking_no = :trip_booking_no AND customer_id = :customer_id";
 
         $dbh = getConnection();
 
@@ -224,7 +225,7 @@ $app->delete("/refuse_invite/{trip_booking_no}/{customer_id}", function(Request 
 
 $app->put('/accept_invite/{trip_booking_no}/{customer_id}', function(Request $request, Response $response, array $args){
     try{
-        $sql = "UPDATE customer_bookings SET Accepted_Invite = 1 WHERE Customer_Id = :customer_id AND Trip_Booking_No = :trip_booking_no";
+        $sql = "UPDATE customer_bookings SET accepted_invite = 1 WHERE customer_id = :customer_id AND trip_booking_no = :trip_booking_no";
 
         $dbh = getConnection();
 

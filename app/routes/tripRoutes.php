@@ -7,10 +7,10 @@ use \Psr\Http\Message\ResponseInterface as Response;
  */
 $app->get('/tour_trips/{tour_no}', function(Request $request, Response $response, array $args){
     try{
-        $sql = 'SELECT trips.Trip_Id, trips.Departure_Date, trips.Max_Passengers, trips.Standard_Amount, trips.Tour_No, tours.Tour_Name
+        $sql = 'SELECT trips.trip_id, trips.departure_date, trips.max_passengers, trips.standard_amount, trips.tour_no, tours.tour_name
         FROM trips, tours
-        WHERE trips.Tour_No = :tour_no
-        AND trips.Tour_No = tours.Tour_no';
+        WHERE trips.tour_no = :tour_no
+        AND trips.tour_no = tours.tour_no';
 
         $dbh = getConnection();
 
@@ -36,7 +36,7 @@ $app->get('/trip/{trip_id}', function(Request $request, Response $response, arra
     try{
         $sql = 'SELECT *
         FROM trips
-        WHERE Trip_Id = :trip_id';
+        WHERE trip_id = :trip_id';
 
         $dbh = getConnection();
         $stmt = $dbh->prepare($sql);
@@ -44,6 +44,7 @@ $app->get('/trip/{trip_id}', function(Request $request, Response $response, arra
         $stmt->execute();
         $row = $stmt->fetchAll(PDO::FETCH_OBJ);
         $dbh = null;
+        $stmt = null;
 
         $response->getBody()->write(json_encode($row));
     }catch (PDOException $e){

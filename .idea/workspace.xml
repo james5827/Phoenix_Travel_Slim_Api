@@ -6,6 +6,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/routes/bookingRoutes.php" afterPath="$PROJECT_DIR$/app/routes/bookingRoutes.php" />
+      <change beforePath="$PROJECT_DIR$/app/routes/itineraryRoutes.php" afterPath="$PROJECT_DIR$/app/routes/itineraryRoutes.php" />
+      <change beforePath="$PROJECT_DIR$/app/routes/reviewRoutes.php" afterPath="$PROJECT_DIR$/app/routes/reviewRoutes.php" />
+      <change beforePath="$PROJECT_DIR$/app/routes/tripRoutes.php" afterPath="$PROJECT_DIR$/app/routes/tripRoutes.php" />
+      <change beforePath="$PROJECT_DIR$/app/routes/userRoutes.php" afterPath="$PROJECT_DIR$/app/routes/userRoutes.php" />
       <change beforePath="$PROJECT_DIR$/src/routes.php" afterPath="$PROJECT_DIR$/src/routes.php" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
@@ -54,13 +59,102 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="24" column="21" lean-forward="true" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+            <state relative-caret-position="408">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
-                <marker date="1528287186476" expanded="true" signature="234:261" ph="SELECT * FRO... tours" />
-                <marker date="1528287186476" expanded="true" signature="1490:1546" ph="SELECT Passw... customers" />
-                <marker date="1528287186476" expanded="true" signature="2650:2850" ph="INSERT INTO customers... " />
-                <marker date="1528287186476" expanded="true" signature="3975:4055" ph="SELECT * FRO... customers" />
+                <marker date="1528287777420" expanded="true" signature="285:304" ph="SELECT * FRO... tours" />
+                <marker date="1528287777420" expanded="true" signature="1577:1633" ph="SELECT Passw... customers" />
+                <marker date="1528287777420" expanded="true" signature="2737:2937" ph="INSERT INTO customers... " />
+                <marker date="1528287777420" expanded="true" signature="4062:4142" ph="SELECT * FRO... customers" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bookingRoutes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/routes/bookingRoutes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="549">
+              <caret line="232" column="30" lean-forward="false" selection-start-line="232" selection-start-column="30" selection-end-line="232" selection-end-column="30" />
+              <folding>
+                <marker date="1528288205643" expanded="true" signature="293:672" ph="SELECT tb.`t... trip_bookings" />
+                <marker date="1528288205643" expanded="true" signature="293:1228" ph="SELECT tb.`t... " />
+                <marker date="1528288205643" expanded="true" signature="717:1228" ph="SELECT tb.`t... customer_bookings" />
+                <marker date="1528288205643" expanded="true" signature="1897:2131" ph="SELECT c.fir... customer_bookings" />
+                <marker date="1528288205643" expanded="true" signature="2706:3228" ph="SELECT cb.Tr... customer_bookings" />
+                <marker date="1528288205643" expanded="true" signature="3950:4049" ph="INSERT INTO trip_bookings... " />
+                <marker date="1528288205643" expanded="true" signature="5152:5353" ph="INSERT INTO customer_bookings... " />
+                <marker date="1528288205643" expanded="true" signature="5246:5353" ph="SELECT ?, Cu... customers" />
+                <marker date="1528288205643" expanded="true" signature="5891:5957" ph="DELETE FROM trip_bookings... " />
+                <marker date="1528288205643" expanded="true" signature="6579:6680" ph="DELETE FROM customer_bookings... " />
+                <marker date="1528288205643" expanded="true" signature="7238:7358" ph="UPDATE customer_bookings... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="itineraryRoutes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/routes/itineraryRoutes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="30" column="21" lean-forward="false" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+              <folding>
+                <marker date="1528288225481" expanded="true" signature="278:364" ph="SELECT * FRO... itineraries" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reviewRoutes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/routes/reviewRoutes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="702">
+              <caret line="111" column="21" lean-forward="false" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
+              <folding>
+                <marker date="1528288397313" expanded="true" signature="280:555" ph="SELECT trips... customer_reviews" />
+                <marker date="1528288397313" expanded="true" signature="1124:1485" ph="SELECT cr.Tr... customer_reviews" />
+                <marker date="1528288397313" expanded="true" signature="2330:2436" ph="INSERT INTO customer_reviews... " />
+                <marker date="1528288397313" expanded="true" signature="3239:3323" ph="DELETE FROM customer_reviews... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tourRoutes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/routes/tourRoutes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="31" column="3" lean-forward="false" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
+              <folding>
+                <marker date="1527957549438" expanded="true" signature="252:287" ph="SELECT * FRO... tours" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tripRoutes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/routes/tripRoutes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="765">
+              <caret line="46" column="21" lean-forward="false" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+              <folding>
+                <marker date="1528288473227" expanded="true" signature="271:497" ph="SELECT trips... trips" />
+                <marker date="1528288473227" expanded="true" signature="1034:1094" ph="SELECT * FRO... trips" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userRoutes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/routes/userRoutes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="838">
+              <caret line="139" column="3" lean-forward="true" selection-start-line="139" selection-start-column="3" selection-end-line="139" selection-end-column="3" />
+              <folding>
+                <marker date="1528288599903" expanded="true" signature="277:365" ph="SELECT * FRO... customers" />
+                <marker date="1528288599903" expanded="true" signature="940:1040" ph="SELECT email... customers" />
+                <marker date="1528288599903" expanded="true" signature="2047:2374" ph="UPDATE customers... " />
+                <marker date="1528288599903" expanded="true" signature="3555:3634" ph="UPDATE customers... " />
               </folding>
             </state>
           </provider>
@@ -106,23 +200,23 @@
         <option value="$PROJECT_DIR$/app/routes/test.js" />
         <option value="$PROJECT_DIR$/tests/Functional/TripsTest.php" />
         <option value="$PROJECT_DIR$/tests/Functional/BookingsTest.php" />
-        <option value="$PROJECT_DIR$/app/routes/itineraryRoutes.php" />
         <option value="$PROJECT_DIR$/tests/Functional/ItinerariesTest.php" />
         <option value="$PROJECT_DIR$/tests/Functional/ReviewsTest.php" />
         <option value="$PROJECT_DIR$/tests/Functional/UsersTest.php" />
         <option value="$PROJECT_DIR$/tests/Functional/CurlBaseTestCase.php" />
         <option value="$PROJECT_DIR$/public/index.php" />
-        <option value="$PROJECT_DIR$/app/routes/tripRoutes.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/5b167988-7fe5-4ba8-a599-d0054bc815c7/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/1b40c163-a67a-4581-af73-1fd63665c78f/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/3b280b8b-a784-47da-9adb-d65baf3594b3/console.sql" />
         <option value="$PROJECT_DIR$/app/routes/tourRoutes.php" />
-        <option value="$PROJECT_DIR$/app/routes/bookingRoutes.php" />
-        <option value="$PROJECT_DIR$/app/routes/reviewRoutes.php" />
-        <option value="$PROJECT_DIR$/app/routes/userRoutes.php" />
         <option value="$PROJECT_DIR$/tests/Functional/ToursTest.php" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/src/routes.php" />
+        <option value="$PROJECT_DIR$/app/routes/bookingRoutes.php" />
+        <option value="$PROJECT_DIR$/app/routes/itineraryRoutes.php" />
+        <option value="$PROJECT_DIR$/app/routes/reviewRoutes.php" />
+        <option value="$PROJECT_DIR$/app/routes/tripRoutes.php" />
+        <option value="$PROJECT_DIR$/app/routes/userRoutes.php" />
       </list>
     </option>
   </component>
@@ -174,7 +268,7 @@
       <path value="$PROJECT_DIR$/vendor/composer" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="960" />
     <option name="width" value="960" />
     <option name="height" value="1040" />
@@ -201,6 +295,17 @@
             <path>
               <item name="PhoenixTravelSlimApi" type="b2602c69:ProjectViewProjectNode" />
               <item name="PhoenixTravelSlimApi" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="PhoenixTravelSlimApi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PhoenixTravelSlimApi" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="PhoenixTravelSlimApi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PhoenixTravelSlimApi" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="PhoenixTravelSlimApi" type="b2602c69:ProjectViewProjectNode" />
@@ -294,22 +399,22 @@
       <workItem from="1528277514904" duration="28000" />
       <workItem from="1528279363539" duration="70000" />
       <workItem from="1528279434592" duration="60000" />
-      <workItem from="1528279495590" duration="5462000" />
+      <workItem from="1528279495590" duration="6615000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135259000" />
+    <option name="totallyTimeSpent" value="136412000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="0" width="960" height="1040" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2211111" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10607676" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54130435" sideWeight="0.5021322" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3188889" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3188889" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -589,20 +694,6 @@
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1b40c163-a67a-4581-af73-1fd63665c78f/console.sql" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3b280b8b-a784-47da-9adb-d65baf3594b3/console.sql" />
-    <entry file="file://$PROJECT_DIR$/app/routes/itineraryRoutes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/userRoutes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="57" column="30" lean-forward="false" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/Functional/BookingsTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -610,38 +701,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/tripRoutes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="28" column="21" lean-forward="false" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/bookingRoutes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="213" column="47" lean-forward="false" selection-start-line="213" selection-start-column="47" selection-end-line="213" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/reviewRoutes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="105" column="29" lean-forward="false" selection-start-line="105" selection-start-column="14" selection-end-line="105" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/Functional/BaseTestCase.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="35" column="41" lean-forward="false" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/tourRoutes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="31" column="3" lean-forward="false" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -667,6 +730,83 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/bookingRoutes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="232" column="30" lean-forward="false" selection-start-line="232" selection-start-column="30" selection-end-line="232" selection-end-column="30" />
+          <folding>
+            <marker date="1528288205643" expanded="true" signature="293:672" ph="SELECT tb.`t... trip_bookings" />
+            <marker date="1528288205643" expanded="true" signature="293:1228" ph="SELECT tb.`t... " />
+            <marker date="1528288205643" expanded="true" signature="717:1228" ph="SELECT tb.`t... customer_bookings" />
+            <marker date="1528288205643" expanded="true" signature="1897:2131" ph="SELECT c.fir... customer_bookings" />
+            <marker date="1528288205643" expanded="true" signature="2706:3228" ph="SELECT cb.Tr... customer_bookings" />
+            <marker date="1528288205643" expanded="true" signature="3950:4049" ph="INSERT INTO trip_bookings... " />
+            <marker date="1528288205643" expanded="true" signature="5152:5353" ph="INSERT INTO customer_bookings... " />
+            <marker date="1528288205643" expanded="true" signature="5246:5353" ph="SELECT ?, Cu... customers" />
+            <marker date="1528288205643" expanded="true" signature="5891:5957" ph="DELETE FROM trip_bookings... " />
+            <marker date="1528288205643" expanded="true" signature="6579:6680" ph="DELETE FROM customer_bookings... " />
+            <marker date="1528288205643" expanded="true" signature="7238:7358" ph="UPDATE customer_bookings... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/itineraryRoutes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="30" column="21" lean-forward="false" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+          <folding>
+            <marker date="1528288225481" expanded="true" signature="278:364" ph="SELECT * FRO... itineraries" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/reviewRoutes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="111" column="21" lean-forward="false" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
+          <folding>
+            <marker date="1528288397313" expanded="true" signature="280:555" ph="SELECT trips... customer_reviews" />
+            <marker date="1528288397313" expanded="true" signature="1124:1485" ph="SELECT cr.Tr... customer_reviews" />
+            <marker date="1528288397313" expanded="true" signature="2330:2436" ph="INSERT INTO customer_reviews... " />
+            <marker date="1528288397313" expanded="true" signature="3239:3323" ph="DELETE FROM customer_reviews... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/tourRoutes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="31" column="3" lean-forward="false" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
+          <folding>
+            <marker date="1527957549438" expanded="true" signature="252:287" ph="SELECT * FRO... tours" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/tripRoutes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="46" column="21" lean-forward="false" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+          <folding>
+            <marker date="1528288473227" expanded="true" signature="271:497" ph="SELECT trips... trips" />
+            <marker date="1528288473227" expanded="true" signature="1034:1094" ph="SELECT * FRO... trips" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/userRoutes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="838">
+          <caret line="139" column="3" lean-forward="true" selection-start-line="139" selection-start-column="3" selection-end-line="139" selection-end-column="3" />
+          <folding>
+            <marker date="1528288599903" expanded="true" signature="277:365" ph="SELECT * FRO... customers" />
+            <marker date="1528288599903" expanded="true" signature="940:1040" ph="SELECT email... customers" />
+            <marker date="1528288599903" expanded="true" signature="2047:2374" ph="UPDATE customers... " />
+            <marker date="1528288599903" expanded="true" signature="3555:3634" ph="UPDATE customers... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -677,13 +817,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="24" column="21" lean-forward="true" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+        <state relative-caret-position="408">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
-            <marker date="1528287186476" expanded="true" signature="234:261" ph="SELECT * FRO... tours" />
-            <marker date="1528287186476" expanded="true" signature="1490:1546" ph="SELECT Passw... customers" />
-            <marker date="1528287186476" expanded="true" signature="2650:2850" ph="INSERT INTO customers... " />
-            <marker date="1528287186476" expanded="true" signature="3975:4055" ph="SELECT * FRO... customers" />
+            <marker date="1528287777420" expanded="true" signature="285:304" ph="SELECT * FRO... tours" />
+            <marker date="1528287777420" expanded="true" signature="1577:1633" ph="SELECT Passw... customers" />
+            <marker date="1528287777420" expanded="true" signature="2737:2937" ph="INSERT INTO customers... " />
+            <marker date="1528287777420" expanded="true" signature="4062:4142" ph="SELECT * FRO... customers" />
           </folding>
         </state>
       </provider>

@@ -10,7 +10,7 @@ $app->get('/itineraries/{tour_no}', function(Request $request, Response $respons
     try{
         $sql = 'SELECT * 
                 FROM `itineraries` 
-                WHERE Tour_No = :tour_no';
+                WHERE tour_no = :tour_no';
 
         $dbh = getConnection();
 
@@ -21,6 +21,7 @@ $app->get('/itineraries/{tour_no}', function(Request $request, Response $respons
         $row = $stmt->fetchAll(PDO::FETCH_OBJ);
 
         $dbh = null;
+        $stmt = null;
 
         $response->getBody()->write(json_encode($row));
     }catch (PDOException $e){
