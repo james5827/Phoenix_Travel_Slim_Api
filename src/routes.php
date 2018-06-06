@@ -8,7 +8,6 @@ use Slim\Http\Response;
 $app->get('/', function (Request $request, Response $response) {
     $response->getBody()->write(getenv('DATABASE_URL'));
     $response->getBody()->write("\n");
-    $response->getBody()->write(print_r(parse_url(getenv('DATABASE_URL'))));
     $response->getBody()->write("\n\n");
 
     try{
@@ -16,6 +15,7 @@ $app->get('/', function (Request $request, Response $response) {
 
         $dbh = getConnection();
         $stmt = $dbh->prepare($sql);
+        $stmt->execute();
         $row = $stmt->fetchAll(PDO::FETCH_OBJ);
 
         $response->write(json_encode($row));
@@ -36,6 +36,13 @@ function getConnection()
     $dbUser = $url['user'];
     $dbPass = $url['pass'];
     $dbName = ltrim($url["path"], "/");
+
+    echo $dbhost;
+    echo $dbPort;
+    echo $dbName;
+    echo $dbUser;
+    echo $dbPass;
+
 
     $dbh = new PDO("pgsql:host=$dbhost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

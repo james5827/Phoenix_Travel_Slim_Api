@@ -6,7 +6,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Procfile" afterPath="$PROJECT_DIR$/Procfile" />
       <change beforePath="$PROJECT_DIR$/src/routes.php" afterPath="$PROJECT_DIR$/src/routes.php" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
@@ -44,13 +43,13 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="40" column="66" lean-forward="true" selection-start-line="40" selection-start-column="66" selection-end-line="40" selection-end-column="66" />
+            <state relative-caret-position="323">
+              <caret line="20" column="44" lean-forward="true" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
               <folding>
-                <marker date="1528284360075" expanded="true" signature="371:390" ph="SELECT * FRO... tours" />
-                <marker date="1528284360075" expanded="true" signature="1593:1649" ph="SELECT Passw... customers" />
-                <marker date="1528284360075" expanded="true" signature="2753:2953" ph="INSERT INTO customers... " />
-                <marker date="1528284360075" expanded="true" signature="4078:4158" ph="SELECT * FRO... customers" />
+                <marker date="1528284648989" expanded="true" signature="294:313" ph="SELECT * FRO... tours" />
+                <marker date="1528284648989" expanded="true" signature="1634:1690" ph="SELECT Passw... customers" />
+                <marker date="1528284648989" expanded="true" signature="2794:2994" ph="INSERT INTO customers... " />
+                <marker date="1528284648989" expanded="true" signature="4119:4199" ph="SELECT * FRO... customers" />
               </folding>
             </state>
           </provider>
@@ -295,12 +294,12 @@
       <workItem from="1528277514904" duration="28000" />
       <workItem from="1528279363539" duration="70000" />
       <workItem from="1528279434592" duration="60000" />
-      <workItem from="1528279495590" duration="2885000" />
+      <workItem from="1528279495590" duration="3162000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132682000" />
+    <option name="totallyTimeSpent" value="132959000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -678,13 +677,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="40" column="66" lean-forward="true" selection-start-line="40" selection-start-column="66" selection-end-line="40" selection-end-column="66" />
+        <state relative-caret-position="323">
+          <caret line="20" column="44" lean-forward="true" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
           <folding>
-            <marker date="1528284360075" expanded="true" signature="371:390" ph="SELECT * FRO... tours" />
-            <marker date="1528284360075" expanded="true" signature="1593:1649" ph="SELECT Passw... customers" />
-            <marker date="1528284360075" expanded="true" signature="2753:2953" ph="INSERT INTO customers... " />
-            <marker date="1528284360075" expanded="true" signature="4078:4158" ph="SELECT * FRO... customers" />
+            <marker date="1528284648989" expanded="true" signature="294:313" ph="SELECT * FRO... tours" />
+            <marker date="1528284648989" expanded="true" signature="1634:1690" ph="SELECT Passw... customers" />
+            <marker date="1528284648989" expanded="true" signature="2794:2994" ph="INSERT INTO customers... " />
+            <marker date="1528284648989" expanded="true" signature="4119:4199" ph="SELECT * FRO... customers" />
           </folding>
         </state>
       </provider>
