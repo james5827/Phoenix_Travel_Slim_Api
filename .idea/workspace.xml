@@ -54,13 +54,13 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="14" column="36" lean-forward="false" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+            <state relative-caret-position="119">
+              <caret line="8" column="76" lean-forward="true" selection-start-line="8" selection-start-column="76" selection-end-line="8" selection-end-column="76" />
               <folding>
-                <marker date="1528286348195" expanded="true" signature="223:242" ph="SELECT * FRO... tours" />
-                <marker date="1528286348195" expanded="true" signature="1563:1619" ph="SELECT Passw... customers" />
-                <marker date="1528286348195" expanded="true" signature="2723:2923" ph="INSERT INTO customers... " />
-                <marker date="1528286348195" expanded="true" signature="4048:4128" ph="SELECT * FRO... customers" />
+                <marker date="1528286465936" expanded="true" signature="234:253" ph="SELECT * FRO... tours" />
+                <marker date="1528286465936" expanded="true" signature="1574:1630" ph="SELECT Passw... customers" />
+                <marker date="1528286465936" expanded="true" signature="2734:2934" ph="INSERT INTO customers... " />
+                <marker date="1528286465936" expanded="true" signature="4059:4139" ph="SELECT * FRO... customers" />
               </folding>
             </state>
           </provider>
@@ -295,12 +295,12 @@
       <workItem from="1528277514904" duration="28000" />
       <workItem from="1528279363539" duration="70000" />
       <workItem from="1528279434592" duration="60000" />
-      <workItem from="1528279495590" duration="4353000" />
+      <workItem from="1528279495590" duration="4471000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134150000" />
+    <option name="totallyTimeSpent" value="134268000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -678,13 +678,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="36" lean-forward="false" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+        <state relative-caret-position="119">
+          <caret line="8" column="76" lean-forward="true" selection-start-line="8" selection-start-column="76" selection-end-line="8" selection-end-column="76" />
           <folding>
-            <marker date="1528286348195" expanded="true" signature="223:242" ph="SELECT * FRO... tours" />
-            <marker date="1528286348195" expanded="true" signature="1563:1619" ph="SELECT Passw... customers" />
-            <marker date="1528286348195" expanded="true" signature="2723:2923" ph="INSERT INTO customers... " />
-            <marker date="1528286348195" expanded="true" signature="4048:4128" ph="SELECT * FRO... customers" />
+            <marker date="1528286465936" expanded="true" signature="234:253" ph="SELECT * FRO... tours" />
+            <marker date="1528286465936" expanded="true" signature="1574:1630" ph="SELECT Passw... customers" />
+            <marker date="1528286465936" expanded="true" signature="2734:2934" ph="INSERT INTO customers... " />
+            <marker date="1528286465936" expanded="true" signature="4059:4139" ph="SELECT * FRO... customers" />
           </folding>
         </state>
       </provider>
