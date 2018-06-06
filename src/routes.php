@@ -6,9 +6,7 @@ use Slim\Http\Response;
 // Routes
 
 $app->get('/', function (Request $request, Response $response) {
-    $response->getBody()->write(getenv('DATABASE_URL'));
-    $response->getBody()->write("\n");
-    $response->getBody()->write("\n\n");
+    $response->getBody()->write(print_r(getenv('DATABASE_URL')));
 
     try{
         $sql = "SELECT * FROM tours;";
