@@ -9,7 +9,7 @@ $app->get('/', function (Request $request, Response $response) {
     $response->getBody()->write(print_r(parse_url(getenv('DATABASE_URL'))));
 
     try{
-        $sql = "SELECT * FROM tours;";
+        $sql = "SELECT Tour_Name FROM tours;";
 
         $dbh = getConnection();
         $stmt = $dbh->prepare($sql);
@@ -34,13 +34,6 @@ function getConnection()
     $dbUser = $url['user'];
     $dbPass = $url['pass'];
     $dbName = ltrim($url["path"], "/");
-
-    echo $dbhost;
-    echo $dbPort;
-    echo $dbName;
-    echo $dbUser;
-    echo $dbPass;
-
 
     $dbh = new PDO("pgsql:host=$dbhost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
