@@ -7,7 +7,23 @@ use Slim\Http\Response;
 
 $app->get('/', function (Request $request, Response $response) {
     $response->getBody()->write(getenv('DATABASE_URL'));
+    $response->getBody()->write("\n");
     $response->getBody()->write(print_r(parse_url(getenv('DATABASE_URL'))));
+    $response->getBody()->write("\n\n");
+
+    try{
+        $sql = "SELECT * FROM tours;";
+
+        $dbh = getConnection();
+        $stmt = $dbh->prepare($sql);
+        $row = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+        $response->write(json_encode($row));
+
+    }catch (PDOException $exception){
+        $response->write($exception->getMessage());
+    }
+
     return $response;
 });
 
@@ -15,12 +31,12 @@ function getConnection()
 {
     $url = parse_url(getenv('DATABASE_URL'));
 
-    $dbhost = 'localhost';
-    $dbUser = 'root';
-    $dbPass = 'root';
+    $dbhost = $url['host'];
+    $dbUser = $url['user'];
+    $dbPass = $url['pass'];
     $dbName = 'phoenix_travel';
 
-    $dbh = new PDO("mysql:host=$dbhost;dbname=$dbName", $dbUser, $dbPass);
+    $dbh = new PDO("pgsql:host=$dbhost;dbname=$dbName", $dbUser, $dbPass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     return $dbh;
