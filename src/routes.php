@@ -32,11 +32,12 @@ function getConnection()
     $url = parse_url(getenv('DATABASE_URL'));
 
     $dbhost = $url['host'];
+    $dbPort = $url['port'];
     $dbUser = $url['user'];
     $dbPass = $url['pass'];
     $dbName = ltrim($url["path"], "/");
 
-    $dbh = new PDO("pgsql:host=$dbhost;dbname=$dbName", $dbUser, $dbPass);
+    $dbh = new PDO("pgsql:host=$dbhost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     return $dbh;
