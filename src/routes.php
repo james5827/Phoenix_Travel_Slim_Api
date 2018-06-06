@@ -34,7 +34,7 @@ function getConnection()
     $dbhost = $url['host'];
     $dbUser = $url['user'];
     $dbPass = $url['pass'];
-    $dbName = 'phoenix_travel';
+    $dbName = ltrim($url["path"], "/");
 
     $dbh = new PDO("pgsql:host=$dbhost;dbname=$dbName", $dbUser, $dbPass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
